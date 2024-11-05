@@ -1,36 +1,96 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# UX Design Gamification Dashboard
+
+A comprehensive gamification platform for UX design learning, built with Next.js, TypeScript, and Tailwind CSS.
+
+## Features
+
+- 🏆 Achievement System
+- 🌟 Skill Trees
+- 📊 Performance Analytics
+- ⚡ Power-ups
+- 🔥 Streak Tracking
+- 📈 Progress Visualization
+- 🌓 Dark/Light Theme
+- 🔔 Real-time Notifications
+
+## Tech Stack
+
+- **Framework:** Next.js 13 with App Router
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS
+- **UI Components:** shadcn/ui
+- **State Management:** React Context
+- **Charts:** Recharts
+- **Animations:** Framer Motion
+- **Icons:** Lucide React
 
 ## Getting Started
 
-First, run the development server:
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/ankish8/ux-design-gamification.git
+   ```
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+2. Install dependencies:
+   ```bash
+   cd ux-design-gamification
+   npm install
+   ```
+
+3. Run the development server:
+   ```bash
+   npm run dev
+   ```
+
+4. Open http://localhost:3000 in your browser
+
+## Project Structure
+
+```
+src/
+├── app/                   # Next.js app router files
+├── components/            # React components
+├── config/               # Configuration files
+├── context/              # React context providers
+├── types/                # TypeScript type definitions
+└── utils/                # Utility functions
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Key Components
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- `StudentTable`: Manage and track student progress
+- `SkillTreeCard`: Visual skill progression system
+- `AchievementsCard`: Track and display achievements
+- `PowerUpsCard`: Manage temporary boosts
+- `AnalyticsCharts`: Visualize performance data
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Features in Detail
 
-## Learn More
+### Achievement System
+- Multiple achievement categories
+- Progress tracking
+- Unlockable rewards
 
-To learn more about Next.js, take a look at the following resources:
+### Skill Trees
+- Multiple learning paths
+- Progressive skill development
+- Prerequisite system
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Analytics
+- Performance tracking
+- Progress visualization
+- Achievement statistics
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Contributing
 
-## Deploy on Vercel
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## License
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Contact
+
+Ankish - [@ankish8](https://github.com/ankish8)
+
+Project Link: [https://github.com/ankish8/ux-design-gamification](https://github.com/ankish8/ux-design-gamification)
