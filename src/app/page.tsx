@@ -3,7 +3,7 @@
 import React from 'react';
 import { Header } from '../components/Layout/Header';
 import { useGamification } from '../context/GamificationContext';
-import { StudentTable } from '../components/StudentTable/StudentTable';
+import StudentTable from '../components/StudentTable/StudentTable';
 import { LeaderboardCard } from '../components/Leaderboard/LeaderboardCard';
 import { AchievementsCard } from '../components/Achievements/AchievementsCard';
 import { PowerUpsCard } from '../components/PowerUps/PowerUpsCard';

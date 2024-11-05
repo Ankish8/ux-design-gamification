@@ -1,78 +1,217 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
- 
+
 @layer base {
   :root {
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
- 
+
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
- 
+
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
- 
+
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
- 
+
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
- 
+
     --primary: 222.2 47.4% 11.2%;
     --primary-foreground: 210 40% 98%;
- 
+
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
- 
+
     --accent: 210 40% 96.1%;
     --accent-foreground: 222.2 47.4% 11.2%;
- 
+
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
- 
+
     --ring: 215 20.2% 65.1%;
- 
+
     --radius: 0.5rem;
+
+    /* Chart Colors */
+    --chart-1: 215 100% 50%; /* Blue */
+    --chart-2: 142 76% 36%; /* Green */
+    --chart-3: 355 100% 50%; /* Red */
+    --chart-4: 45 100% 50%; /* Yellow */
+    --chart-5: 270 100% 50%; /* Purple */
+
+    /* Kit Kat Theme Colors */
+    --kitkat-red: 0 83% 47%;
+    --kitkat-progress: 210 40% 98%;
+    --kitkat-progress-bg: 210 40% 96.1%;
   }
- 
+
   .dark {
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
- 
+
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
- 
+
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
- 
+
     --card: 222.2 84% 4.9%;
     --card-foreground: 210 40% 98%;
- 
+
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
- 
+
     --primary: 210 40% 98%;
     --primary-foreground: 222.2 47.4% 11.2%;
- 
+
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
- 
+
     --accent: 217.2 32.6% 17.5%;
     --accent-foreground: 210 40% 98%;
- 
+
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 85.7% 97.3%;
- 
+
     --ring: 217.2 32.6% 17.5%;
+
+    /* Dark mode Chart Colors */
+    --chart-1: 215 100% 60%; /* Lighter Blue */
+    --chart-2: 142 76% 45%; /* Lighter Green */
+    --chart-3: 355 100% 60%; /* Lighter Red */
+    --chart-4: 45 100% 60%; /* Lighter Yellow */
+    --chart-5: 270 100% 60%; /* Lighter Purple */
+
+    /* Dark mode Kit Kat Theme Colors */
+    --kitkat-red: 0 83% 57%;
+    --kitkat-progress: 217.2 32.6% 17.5%;
+    --kitkat-progress-bg: 215 20.2% 65.1%;
   }
 }
- 
+
 @layer base {
   * {
     @apply border-border;
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  /* Progress Bar Styles */
+  .progress-bar {
+    @apply relative h-2 w-full overflow-hidden rounded-full bg-secondary;
+  }
+
+  .progress-bar-fill {
+    @apply absolute h-full bg-primary transition-all duration-500 ease-in-out;
+  }
+
+  /* Kit Kat Progress Bar */
+  .kitkat-progress {
+    @apply relative h-8 overflow-hidden rounded-md border border-border bg-kitkat-progress-bg;
+  }
+
+  .kitkat-segment {
+    @apply flex-1 border-r border-border relative;
+  }
+
+  .kitkat-segment-filled {
+    @apply bg-[#cc2229];
+  }
+
+  .kitkat-divider {
+    @apply absolute inset-0 flex items-center justify-center;
+  }
+
+  .kitkat-divider-line {
+    @apply w-[2px] h-[80%] bg-white/20;
+  }
+
+  /* Animation Classes */
+  .fade-in {
+    @apply animate-fadeIn;
+  }
+
+  .slide-in {
+    @apply animate-slideIn;
+  }
+
+  .scale-in {
+    @apply animate-scaleIn;
+  }
+
+  /* Table Styles */
+  .student-table {
+    @apply w-full border-collapse;
+  }
+
+  .student-table th {
+    @apply px-4 py-2 text-left font-medium text-muted-foreground;
+  }
+
+  .student-table td {
+    @apply px-4 py-2 border-t border-border;
+  }
+
+  /* Badge Styles */
+  .points-badge {
+    @apply inline-flex items-center gap-1 px-2 py-1 rounded-full text-sm font-medium bg-secondary text-secondary-foreground;
+  }
+
+  .streak-badge {
+    @apply inline-flex items-center gap-1 px-2 py-1 rounded-full text-sm font-medium bg-accent text-accent-foreground;
+  }
+
+  /* Avatar Styles */
+  .student-avatar {
+    @apply h-8 w-8 rounded-full overflow-hidden border border-border;
+  }
+
+  /* Search Input Styles */
+  .search-input {
+    @apply flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background 
+    file:border-0 file:bg-transparent file:text-sm file:font-medium 
+    placeholder:text-muted-foreground 
+    focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 
+    disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  /* Button Animations */
+  .action-button {
+    @apply transition-transform duration-200 ease-spring hover:scale-105 active:scale-95;
+  }
+}
+
+/* Custom Scrollbar */
+@layer utilities {
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    @apply bg-secondary rounded-full;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-primary rounded-full;
+  }
+
+  /* Gradient Text */
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary;
   }
 }
